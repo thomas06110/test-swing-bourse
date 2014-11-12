@@ -21,6 +21,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Logger;
+
 import javax.swing.SwingConstants;
 
 public class AnalyseBourse implements Observer{
@@ -51,6 +53,9 @@ public class AnalyseBourse implements Observer{
 	 * Create the application.
 	 */
 	public AnalyseBourse() {
+		/* Get actual class name to be printed on */
+		Logger log = Logger.getLogger(AnalyseBourse.class.getName());
+		log.info("Démarrage de l'application");
 		mainPanel=new JPanel();
 		manager=new Manager(mainPanel);
 		manager.addObserver(this);
